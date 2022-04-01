@@ -14,7 +14,7 @@ if (TARGET_WEB) {
 if (TARGET_DEV) {
   module.exports = defineConfig({
     configureWebpack: () => ({
-      entry: './src/dev-entry.js'
+      entry: './src/client-entry.js'
     })
   })
 }

@@ -11,6 +11,7 @@
     "build:server": "cross-env WEBPACK_TARGET=node vue-cli-service build --mode server"
   },
   "dependencies": {
+    "axios": "^0.26.1",
     "compression": "^1.7.4",
     "connect-history-api-fallback": "^1.6.0",
     "core-js": "^3.8.3",

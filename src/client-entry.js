@@ -1,5 +1,15 @@
-import createApp from './app'
+import Vue from 'vue';
+import createApp from './app';
 
-const { app } = createApp()
+Vue.config.productionTip = false
 
-app.$mount('#app')
+const { app, router} = createApp();
+
+// if (window.__INITIAL_STATE__) {
+//     store.replaceState(window.__INITIAL_STATE__);
+// }
+
+router.onReady(() => {
+    app.$mount('#app', true);
+});
+

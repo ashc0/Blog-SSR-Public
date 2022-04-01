@@ -2,25 +2,16 @@
   <div id="app">
     <nav>
       <router-link to="/">Home</router-link> |
+      <router-link to="/login">Login</router-link> |
       <router-link to="/about">About</router-link>
     </nav>
-    {{ msg }}
-    <button @click="onClick">Print</button>
+    666
     <router-view />
   </div>
 </template>
 <script>
 export default {
-  data() {
-    return {
-      msg: "abc",
-    };
-  },
-  methods: {
-    onClick() {
-      console.log(this.msg);
-    },
-  },
+
 };
 </script>
 <style>
