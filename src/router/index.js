@@ -19,11 +19,11 @@ const routes = [
     component: () => import(/* webpackChunkName: "about" */ '../views/AboutView.vue')
   }
 ]
+function createRouter() {
+  return new VueRouter({
+    mode: 'history',
+    routes
+  })
+}
 
-const router = new VueRouter({
-  mode: 'history',
-  base: process.env.BASE_URL,
-  routes
-})
-
-export default router
+export default createRouter

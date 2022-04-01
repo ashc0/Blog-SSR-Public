@@ -4,10 +4,25 @@
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link>
     </nav>
-    <router-view/>
+    {{ msg }}
+    <button @click="onClick">Print</button>
+    <router-view />
   </div>
 </template>
-
+<script>
+export default {
+  data() {
+    return {
+      msg: "abc",
+    };
+  },
+  methods: {
+    onClick() {
+      console.log(this.msg);
+    },
+  },
+};
+</script>
 <style>
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
