@@ -15,7 +15,7 @@ function createApp(context) {
     store,
     context,
     render: h => h(App)
-  }).$mount('#app')
+  })
 
   return { app, router, store }
 }

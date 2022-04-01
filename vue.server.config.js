@@ -1,9 +1,10 @@
 const nodeExternals = require('webpack-node-externals');
-const { defineConfig } = require('@vue/cli-service')
+// const { defineConfig } = require('@vue/cli-service')
 const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
-module.exports = defineConfig({
-  transpileDependencies: false,
-  outputDir: require('path').resolve(__dirname, './serverDist'),
+module.exports = {
+  // transpileDependencies: false,
+  // outputDir: require('path').resolve(__dirname, './serverDist'),
+  outputDir: 'serverDist',
   css: {
     extract: false // 不提取 css
   },
@@ -25,4 +26,4 @@ module.exports = defineConfig({
       new VueSSRServerPlugin()
     ]
   })
-})
+}

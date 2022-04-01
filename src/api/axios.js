@@ -1,5 +1,5 @@
 import axios from 'axios'
-import { getItem } from '../utils/localStorage'
+// import { getItem } from '../utils/localStorage'
 import createRouter from '../router'
 const router = createRouter()
 const axiosInstance = axios.create({
@@ -8,9 +8,9 @@ const axiosInstance = axios.create({
 })
 
 // 如果 token 存在，则自动带上 token
-if (getItem('token')) {
-  axios.defaults.headers.common['Authorization'] = `Bearer ` + window.localStorage.getItem('token')
-}
+// if (window ? getItem('token') : null) {
+//   axios.defaults.headers.common['Authorization'] = `Bearer ` + window.localStorage.getItem('token')
+// }
 
 axiosInstance.interceptors.response.use(
   response => {

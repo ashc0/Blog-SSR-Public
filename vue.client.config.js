@@ -1,9 +1,9 @@
 
-const { defineConfig } = require('@vue/cli-service')
+// const { defineConfig } = require('@vue/cli-service')
 const VueSSRClientPlugin = require('vue-server-renderer/client-plugin')
-module.exports = defineConfig({
-  transpileDependencies: false,
-  publicPath: '/dist/',
+module.exports = {
+  // transpileDependencies: false,
+  // publicPath: '/dist/',
   // pluginOptions: {
   //   compression: {
   //     gzip: {
@@ -34,4 +34,4 @@ module.exports = defineConfig({
     config.plugins.delete('preload')
     config.plugins.delete('prefetch')
   }
-})
+}
