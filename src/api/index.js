@@ -9,6 +9,9 @@ const login = function (user) {
   })
 }
 
+const getArticleById = id => axiosInstance.get('/article/getbyid' + '/' + id)
+
 export default {
-  login
+  login,
+  getArticleById
 }

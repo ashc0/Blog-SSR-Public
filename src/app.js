@@ -3,6 +3,8 @@ import App from './App.vue'
 import createRouter from './router'
 import createStore from './store'
 import api from './api'
+import './style/reset.css'
+
 Vue.config.productionTip = false
 
 Vue.prototype.$api = api
