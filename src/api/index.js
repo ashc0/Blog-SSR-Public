@@ -11,7 +11,14 @@ const login = function (user) {
 
 const getArticleById = id => axiosInstance.get('/article/getbyid' + '/' + id)
 
+const getArticle = filter => axiosInstance({
+  url: '/article/getarticle',
+  method: 'GET',
+  params: filter
+})
+
 export default {
   login,
-  getArticleById
+  getArticleById,
+  getArticle
 }

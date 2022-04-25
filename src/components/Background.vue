@@ -1,5 +1,5 @@
 <template>
-  <div class="cover-wrapper" :style="{ backgroundImage: img }">
+  <div class="cover-wrapper" :style="{ backgroundImage: img, zIndex: main ? 0 : -1 }">
     <slot />
   </div>
 </template>
@@ -10,15 +10,19 @@ export default {
     img() {
       let src = this.$store.getters.context.src;
       if (this.$route.path === "/") return `url(${src})`;
-      return `-webkit-cross-fade(url(data:image/gif;base64,R0lGODlhAQABAIAAAP///wAAACH5BAEAAAAALAAAAAABAAEAAAICRAEAOw==), url(${src}), 40%)`;
+      // return `-webkit-cross-fade(url(data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=), url(${src}), 60%)`;
+      return `-webkit-cross-fade(url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7), url(${src}), 60%)`;
     },
+    main() {
+      return this.$route.path === "/"
+    }
   }
 };
 </script>
 
-<style scoped>
+<style>
 .cover-wrapper {
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 100vw;
   height: 100vh;

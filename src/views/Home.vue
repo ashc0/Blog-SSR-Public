@@ -1,18 +1,17 @@
 <template>
-<Background>
-  <div>111111</div>
-</Background>
-  
+  <div>
+    <Background />
+    <ContentWrapper />
+  </div>
 </template>
 
 <script>
-import Background from '../components/Background.vue'
+import Background from "../components/Background.vue";
+import ContentWrapper from "../components/home/ContentWrapper.vue";
 export default {
   components: {
     Background,
+    ContentWrapper,
   },
 };
 </script>
-
-<style>
-</style>
