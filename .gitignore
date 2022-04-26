@@ -1,8 +1,10 @@
-.DS_Store
 node_modules
 /dist
 /server-dist
 
+# lock files
+package-lock.json
+yarn.lock
 
 # local env files
 .env.local
