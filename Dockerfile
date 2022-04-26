@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # 以 production 形式安装依赖
-RUN npm install
+RUN npm install -f
 
 # 将本地代码复制到工作目录内
 COPY . ./
