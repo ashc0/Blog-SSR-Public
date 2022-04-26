@@ -34,5 +34,8 @@
     "@vue/cli-plugin-router": "~4.5.17",
     "@vue/cli-plugin-vuex": "~4.5.17",
     "webpack-node-externals": "^3.0.0"
+  },
+  "optionalDependencies": {
+    "fsevents": "^2.1.3"
   }
 }
