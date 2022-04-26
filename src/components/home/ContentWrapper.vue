@@ -35,11 +35,12 @@ export default {
 .content-wrapper {
   /* width: 50vw; */
   /* height: 150vh; */
-  background-color: rgba(255, 255, 255, 0.397);
+  /* background-color: rgba(255, 255, 255, 0.397); */
   margin: 0 20vw;
   transition: opacity 1s linear;
   opacity: 0;
   padding-bottom: 1vh;
+  margin-top: 10vh;
 }
 
 .show {

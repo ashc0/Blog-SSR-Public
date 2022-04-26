@@ -4,7 +4,7 @@ const VueSSRServerPlugin = require('vue-server-renderer/server-plugin')
 module.exports = {
   // transpileDependencies: false,
   // outputDir: require('path').resolve(__dirname, './serverDist'),
-  outputDir: 'serverDist',
+  outputDir: 'server-dist',
   css: {
     extract: false // 不提取 css
   },

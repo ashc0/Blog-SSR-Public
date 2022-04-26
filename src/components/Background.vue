@@ -9,7 +9,7 @@ export default {
   computed: {
     img() {
       let src = this.$store.getters.context.src;
-      if (this.$route.path === "/") return `url(${src})`;
+      if (this.main) return `url(${src})`;
       // return `-webkit-cross-fade(url(data:image/gif;base64,R0lGODlhAQABAIAAAAUEBAAAACwAAAAAAQABAAACAkQBADs=), url(${src}), 60%)`;
       return `-webkit-cross-fade(url(data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7), url(${src}), 60%)`;
     },

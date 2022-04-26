@@ -1,7 +1,52 @@
 <template>
   <div class="article-list-wrapper">
     <div class="recent">最近文章</div>
-    <ul>
+    <ul v-if="!articleList.length">
+      <li v-for="(item, idx) in 2" :key="idx">
+        <div class="cover" style="height: 21vw"></div>
+        <div class="text">
+          <div class="title">
+            <span
+              style="
+                display: inline-block;
+                background-color: #999;
+                height: 25px;
+                width: 30%;
+              "
+            ></span>
+          </div>
+          <div class="updated">
+            <span
+              style="
+                display: inline-block;
+                background-color: #999;
+                height: 0.8vw;
+                width: 20%;
+              "
+            ></span>
+          </div>
+          <div class="desc">
+            <span
+              style="
+                display: inline-block;
+                background-color: #999;
+                height: 16px;
+                width: 95%;
+              "
+            ></span>
+            <span
+              style="
+                display: inline-block;
+                background-color: #999;
+                height: 16px;
+                width: 50%;
+              "
+            ></span>
+          </div>
+        </div>
+      </li>
+    </ul>
+    <ul v-else>
       <li v-for="item of articleList" :key="item._id">
         <div class="cover" v-if="item.cover">
           <img :src="item.cover" loading="lazy" />
@@ -109,8 +154,8 @@ export default {
   overflow: hidden;
 }
 
-.article-list-wrapper ul li {
-  box-shadow: 5px 5px 5px #999;
+.article-list-wrapper ul li:hover {
+  box-shadow: 5px 5px 5px rgb(79, 79, 79);
 }
 
 .article-list-wrapper ul li .cover {
@@ -122,13 +167,15 @@ export default {
 }
 
 .article-list-wrapper ul li .cover img {
-  width: 100%;
-  /* transition: all 0.5s linear; */
+  width: 100.1%;
+  transition: transform 0.3s ease-in-out;
+  will-change: transform;
 }
 
-/* .article-list-wrapper ul li .cover img:hover {
-  width: 120%;
-} */
+.article-list-wrapper ul li .cover img:hover {
+  /* width: 120%; */
+  transform: scale(1.05, 1.05);
+}
 
 .article-list-wrapper ul li .text {
   background-color: #fff;
@@ -180,7 +227,7 @@ export default {
   line-height: 3vh;
   border-radius: 5px;
   cursor: pointer;
-  transition: background-color .3s ease;
+  transition: background-color 0.3s ease;
 }
 
 .article-list-wrapper ul li .text .read:hover {

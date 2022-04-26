@@ -1,7 +1,7 @@
 const express = require('express')
 const path = require('path');
 const fs = require('fs');
-const serverBundle = path.resolve(process.cwd(), 'serverDist', 'vue-ssr-server-bundle.json')
+const serverBundle = path.resolve(process.cwd(), 'server-dist', 'vue-ssr-server-bundle.json')
 const { createBundleRenderer } = require('vue-server-renderer')
 const clientManifestPath = path.resolve(process.cwd(), 'dist', 'vue-ssr-client-manifest.json')
 const clientManifest = JSON.parse(fs.readFileSync(clientManifestPath, 'utf-8'))
