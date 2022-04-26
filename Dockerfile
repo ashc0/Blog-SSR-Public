@@ -9,7 +9,7 @@ WORKDIR /usr/src/app
 COPY package*.json ./
 
 # 以 production 形式安装依赖
-RUN npm install --silent
+RUN npm install
 
 # 将本地代码复制到工作目录内
 COPY . ./
@@ -18,4 +18,4 @@ COPY . ./
 RUN npm run build
 
 # 启动服务
-CMD [ "npm", "ssr" ]
+CMD [ "node", "server-ssr" ]
