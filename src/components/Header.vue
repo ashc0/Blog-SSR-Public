@@ -1,18 +1,21 @@
 <template>
-  <div id="header-bar" v-show="this.$route.path !== '/'">
-    <div class="header-bar-content">
-      <div
-        v-for="item in routes"
-        :key="item.name"
-        :class="{ active: $route.path === item.path }"
-      >
-        {{ item.name }}
+  <transition name="header">
+    <div id="header-bar" v-if="$route.path !== '/'" v-show="show">
+      <div class="header-bar-content">
+        <div
+          v-for="item in routes"
+          :key="item.name"
+          :class="{ active: $route.path === item.path }"
+        >
+          {{ item.name }}
+        </div>
       </div>
     </div>
-  </div>
+  </transition>
 </template>
 
 <script>
+import throttle from "../utils/throttle";
 export default {
   data() {
     return {
@@ -34,12 +37,41 @@ export default {
           path: "/about",
         },
       ],
+      show: true,
+      thr: null,
+      scrollY: 0,
     };
+  },
+  methods: {},
+  created() {},
+  mounted() {
+    this.thr = throttle(() => {
+      let scroll = window.scrollY;
+      if (scroll > this.scrollY) this.show = false;
+      else this.show = true;
+      this.scrollY = scroll;
+    }, 400);
+    window.addEventListener("scroll", (e) => {
+      this.thr(e);
+    });
   },
 };
 </script>
 
 <style scoped>
+.header-enter {
+  transform: translateY(-100%);
+}
+.header-enter-active {
+  transition: transform 0.3s ease-in;
+}
+.header-leave-to {
+  transform: translateY(-100%);
+}
+
+.header-leave-active {
+  transition: transform 0.3s ease-in;
+}
 #header-bar {
   height: 5.5vh;
   background-color: rgba(255, 255, 255, 0.9);
@@ -47,7 +79,7 @@ export default {
   top: 0;
   width: 100%;
   z-index: 1;
-  transition: background-color 0.3s ease;
+  /* transition: background-color 0.3s ease; */
   background-attachment: fixed;
 }
 #header-bar .header-bar-content {
