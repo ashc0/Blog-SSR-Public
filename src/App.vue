@@ -1,7 +1,9 @@
 <template>
-  <div id="app" style="width: 100%; height: 100vh;">
+  <div id="app" style="width: 100%; height: 100vh">
     <Header />
-    <router-view></router-view>
+    <keep-alive>
+      <router-view></router-view>
+    </keep-alive>
   </div>
 </template>
 <script>

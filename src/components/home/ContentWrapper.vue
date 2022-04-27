@@ -1,7 +1,9 @@
 <template>
+<transition name="content">
   <div class="content-wrapper" :class="{ show: show }">
     <ArticleList />
   </div>
+</transition>
 </template>
 
 <script>
@@ -25,11 +27,11 @@ export default {
 
 
 <style scoped>
-/* .content-enter {
+.content-leave-to {
   opacity: 0;
 }
 
-.content-enter-active {
+/* .content-leave-active {
   transition: opacity 1s linear;
 } */
 .content-wrapper {

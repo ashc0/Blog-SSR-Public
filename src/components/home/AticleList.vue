@@ -160,7 +160,7 @@ export default {
 
 .article-list-wrapper ul li .cover {
   max-height: 21vw;
-  background-color: lightblue;
+  background-color: rgba(153, 153, 153, 0.586);
   width: 100%;
   overflow: hidden;
   cursor: pointer;
@@ -192,8 +192,8 @@ export default {
   font-size: 25px;
   font-family: "黑体";
   font-weight: 500;
-  height: 4vh;
-  line-height: 4vh;
+  height: 5vh;
+  line-height: 5vh;
   padding-left: 10px;
 }
 
@@ -203,7 +203,7 @@ export default {
   color: rgb(80, 80, 80, 0.9);
   /* letter-spacing: 0; */
   padding-left: 10px;
-  height: 3vh;
+  height: 2.5vh;
   /* margin-top: 0.8vw; */
 }
 .article-list-wrapper ul li .text .author {

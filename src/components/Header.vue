@@ -1,11 +1,15 @@
 <template>
   <transition name="header">
     <div id="header-bar" v-if="$route.path !== '/'" v-show="show">
+      <div id="cover" @click="jump(cover.path)">
+        <span> {{ cover.name }} </span>
+      </div>
       <div class="header-bar-content">
         <div
           v-for="item in routes"
           :key="item.name"
           :class="{ active: $route.path === item.path }"
+          @click="jump(item.path)"
         >
           {{ item.name }}
         </div>
@@ -19,6 +23,10 @@ import throttle from "../utils/throttle";
 export default {
   data() {
     return {
+      cover: {
+        name: "ERSOLA",
+        path: "/",
+      },
       routes: [
         {
           name: "首页",
@@ -42,8 +50,11 @@ export default {
       scrollY: 0,
     };
   },
-  methods: {},
-  created() {},
+  methods: {
+    jump(path) {
+      this.$router.push(path)
+    },
+  },
   mounted() {
     this.thr = throttle(() => {
       let scroll = window.scrollY;
@@ -82,6 +93,26 @@ export default {
   /* transition: background-color 0.3s ease; */
   background-attachment: fixed;
 }
+#header-bar #cover {
+  font-family: "Bauhaus 93", sans-serif;
+  font-size: 2vh;
+  height: 3.5vh;
+  line-height: 3.5vh;
+  left: 8vh;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  text-align: center;
+  width: 10vh;
+  /* border: 1px solid #999; */
+  border-radius: 4px;
+  /* margin-left: 150px; */
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+#header-bar #cover:hover {
+  background-color: rgb(221, 221, 221);
+}
 #header-bar .header-bar-content {
   display: flex;
   margin: 0 auto;
@@ -96,7 +127,7 @@ export default {
   font-family: "宋体";
   font-weight: bold;
   cursor: pointer;
-  transition: background-color;
+  transition: background-color 0.3s ease;
 }
 
 #header-bar .header-bar-content div:hover {
