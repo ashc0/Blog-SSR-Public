@@ -35,6 +35,6 @@ export default {
 }
 
 .home-leave-active {
-  transition: opacity .5s linear;
+  transition: opacity .3s linear;
 }
 </style>

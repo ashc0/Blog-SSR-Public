@@ -4,6 +4,7 @@
 */
 html, body {
 	scroll-behavior:smooth;
+	transition: background-color .3s linear;
 }
 
 html, body, div, span, applet, object, iframe,

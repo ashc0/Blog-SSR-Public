@@ -46,7 +46,7 @@
         </div>
       </li>
     </ul>
-    <ul v-else>
+    <ul v-else @click="read">
       <li v-for="item of articleList" :key="item._id">
         <div class="cover" v-if="item.cover">
           <img :src="item.cover" loading="lazy" />
@@ -70,7 +70,7 @@
               item.description
             }}撒风景哈搜钛金色噢if为爱谁哦啊接哦工商局饿哦is额合同为阿瑟回事
           </div>
-          <div class="read">开始阅读</div>
+          <div class="read" :data-id="item._id">开始阅读</div>
         </div>
       </li>
     </ul>
@@ -119,6 +119,13 @@ export default {
       await this.getArticle(2, this.offset);
       this.offset += 2;
       this.loading = false;
+    },
+    read(e) {
+      if (e.target.dataset.id)
+        this.$router.push({
+          name: "post",
+          params: { id: e.target.dataset.id },
+        });
     },
   },
   beforeMount() {
