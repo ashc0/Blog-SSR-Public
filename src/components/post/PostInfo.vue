@@ -67,6 +67,7 @@ export default {
   position: absolute;
   left: 50%;
   transform: translateX(-50%);
+  margin-bottom: 20vh;
 }
 
 .loaded > .cover {
@@ -139,6 +140,7 @@ export default {
 .loaded > .body {
   flex-grow: 1;
   padding: 10px 18px;
+  /* padding-bottom: 10vh; */
 }
 </style>
 
