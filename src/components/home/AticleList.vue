@@ -121,7 +121,7 @@ export default {
       this.loading = false;
     },
   },
-  created() {
+  beforeMount() {
     this.getArticle(3, 0, true);
   },
 };
@@ -130,7 +130,6 @@ export default {
 <style scoped>
 .article-list-wrapper {
   width: 40vw;
-  /* text-align: center; */
 }
 
 .article-list-wrapper .recent {
@@ -173,15 +172,12 @@ export default {
 }
 
 .article-list-wrapper ul li .cover img:hover {
-  /* width: 120%; */
   transform: scale(1.05, 1.05);
 }
 
 .article-list-wrapper ul li .text {
   background-color: #fff;
   height: 17vh;
-  /* padding: 15px 10px; */
-  /* box-sizing: border-box; */
   display: flex;
   flex-direction: column;
   padding-bottom: 1vh;
@@ -201,11 +197,10 @@ export default {
   font-size: 0.8vw;
   font-family: "宋体";
   color: rgb(80, 80, 80, 0.9);
-  /* letter-spacing: 0; */
   padding-left: 10px;
   height: 2.5vh;
-  /* margin-top: 0.8vw; */
 }
+
 .article-list-wrapper ul li .text .author {
   color: rgba(0, 0, 0, 0.864);
   font-weight: bold;

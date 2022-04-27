@@ -18,6 +18,7 @@ const getArticle = filter => axiosInstance({
 })
 
 export default {
+  axiosInstance,
   login,
   getArticleById,
   getArticle
