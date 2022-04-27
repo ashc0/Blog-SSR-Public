@@ -11,11 +11,9 @@
         <div class="avatar">
           <div class="avatar-loading"></div>
         </div>
-        <div class="update">
-          <div class="username-loading"></div>
-        </div>
-        <div class="text">
-          <div class="update-loading"></div>
+        <div class="about">
+          <div class="username"></div>
+          <div class="update"></div>
         </div>
       </div>
     </div>
@@ -87,11 +85,24 @@ export default {};
   width: 100%;
 }
 
-.post-loading > .content > .info > .update {
+.post-loading > .content > .info > .about {
   flex-grow: 1;
   margin-left: 10px;
 }
 
-.post-loading > .content > .info > .update > .text {
+.post-loading > .content > .info > .about > .username {
+  position: relative;
+  bottom: 10px;
+  height: 18px;
+  width: 80px;
+  background-color: rgb(163, 163, 163);
+}
+
+.post-loading > .content > .info > .about > .update {
+  position: relative;
+  top: 5px;
+  background-color: rgb(214, 211, 211);
+  height: 16px; 
+  width: 63px;
 }
 </style>
