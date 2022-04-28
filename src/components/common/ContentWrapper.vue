@@ -1,15 +1,11 @@
 <template>
   <div class="content-wrapper" :class="{ show: show }">
-    <ArticleList />
+    <slot />
   </div>
 </template>
 
 <script>
-import ArticleList from './AticleList.vue'
 export default {
-  components:{
-    ArticleList
-  },
   data() {
     return {
       show: false,
@@ -26,14 +22,12 @@ export default {
 
 <style scoped>
 .content-wrapper {
-  /* width: 50vw; */
-  /* height: 150vh; */
-  /* background-color: rgba(255, 255, 255, 0.397); */
+  background-color: rgba(255, 255, 255, 0.397);
   margin: 0 20vw;
   transition: opacity 1s linear;
   opacity: 0;
   padding-bottom: 1vh;
-  margin-top: 10vh;
+  margin-top: 9vh;
 }
 
 .show {

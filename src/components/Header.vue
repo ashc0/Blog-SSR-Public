@@ -98,7 +98,7 @@ export default {
   font-size: 2vh;
   height: 3.5vh;
   line-height: 3.5vh;
-  left: 8vh;
+  left: 10vh;
   position: absolute;
   top: 50%;
   transform: translateY(-50%);

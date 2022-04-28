@@ -1,51 +1,7 @@
 <template>
   <div class="article-list-wrapper">
     <div class="recent">最近文章</div>
-    <ul v-if="!articleList.length">
-      <li v-for="(item, idx) in 2" :key="idx">
-        <div class="cover" style="height: 21vw"></div>
-        <div class="text">
-          <div class="title">
-            <span
-              style="
-                display: inline-block;
-                background-color: #999;
-                height: 25px;
-                width: 30%;
-              "
-            ></span>
-          </div>
-          <div class="updated">
-            <span
-              style="
-                display: inline-block;
-                background-color: #999;
-                height: 0.8vw;
-                width: 20%;
-              "
-            ></span>
-          </div>
-          <div class="desc">
-            <span
-              style="
-                display: inline-block;
-                background-color: #999;
-                height: 16px;
-                width: 95%;
-              "
-            ></span>
-            <span
-              style="
-                display: inline-block;
-                background-color: #999;
-                height: 16px;
-                width: 50%;
-              "
-            ></span>
-          </div>
-        </div>
-      </li>
-    </ul>
+    <ArticleListLoading v-if="!articleList.length"/>
     <ul v-else @click="read">
       <li v-for="item of articleList" :key="item._id">
         <div class="cover" v-if="item.cover">
@@ -68,7 +24,7 @@
           <div class="desc">
             {{
               item.description
-            }}撒风景哈搜钛金色噢if为爱谁哦啊接哦工商局饿哦is额合同为阿瑟回事
+            }}
           </div>
           <div class="read" :data-id="item._id">开始阅读</div>
         </div>
@@ -85,9 +41,11 @@
 
 <script>
 import GetMoreButton from "./GetMoreButton.vue";
+import ArticleListLoading from "./ArticleListLoading.vue"
 export default {
   components: {
     GetMoreButton,
+    ArticleListLoading
   },
   data() {
     return {
@@ -132,7 +90,7 @@ export default {
 };
 </script>
 
-<style scoped>
+<style>
 .article-list-wrapper {
   width: 40vw;
 }
@@ -182,20 +140,22 @@ export default {
 
 .article-list-wrapper ul li .text {
   background-color: #fff;
-  height: 17vh;
+  height: 16vh;
   display: flex;
   flex-direction: column;
   padding-bottom: 1vh;
   box-sizing: border-box;
   padding-left: 10px;
+  padding-right: 10px;
 }
 .article-list-wrapper ul li .text .title {
   font-size: 25px;
-  font-family: "黑体";
+  font-family: "宋体";
   font-weight: 500;
   height: 5vh;
   line-height: 5vh;
   padding-left: 10px;
+  font-weight: 800;
 }
 
 .article-list-wrapper ul li .text .updated {
@@ -215,6 +175,7 @@ export default {
   font-family: "宋体";
   padding-left: 10px;
   flex-grow: 1;
+  line-height: 1.3;
 }
 
 .article-list-wrapper ul li .text .read {

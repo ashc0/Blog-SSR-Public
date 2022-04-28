@@ -13,22 +13,8 @@ Vue.prototype.$api.axiosInstance.interceptors.response.use(
     },
     error => {
         if (error && error.response) {
-            // switch (error.response.status) {
-            //   case 401:
-            // router.replace({
-            //   path: 'login',
-            //   query: { redirect: router.currentRoute.fullPath } // 将跳转的路由path作为参数，登录成功后跳转到该路由
-            // })
-            // }
-            switch (error.response.status) {
-                case 500:
-                    router.replace({ name: '500', query: { msg: error.response.data.error.msg } })
-                    break
-                case 404:
-                    router.replace({ name: '404' })
-                    break
-            }
-
+            if (error.response.status == 404) router.replace({ name: '404' })
+            else if (error.response.status >= 400) router.replace({ name: 'error', query: { msg: error.response.data.error.msg, status: error.response.status } })
         }
         return Promise.reject(error.response)
     }

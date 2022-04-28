@@ -1,40 +1,31 @@
 <template>
-<transition name="home">
-  <div>
-    <Background />
-    <ContentWrapper />
-  </div>
-</transition>
+  <!-- <transition name="home"> -->
+  <!-- <div> -->
+  <ContentBg>
+    <ArticleList />
+  </ContentBg>
+  <!-- </div> -->
+  <!-- </transition> -->
 </template>
 
 <script>
-import Background from "../components/Background.vue";
-import ContentWrapper from "../components/home/ContentWrapper.vue";
+import ContentBg from "../components/common/ContentBg.vue";
+import ArticleList from "../components/home/AticleList.vue";
 export default {
   components: {
-    Background,
-    ContentWrapper,
+    ContentBg,
+    ArticleList,
   },
   data() {
     return {
-      y: 0
-    }
+      y: 0,
+    };
   },
-  activated(){
-    window && window.scrollTo(0, this.y)
+  activated() {
+    window && window.scrollTo(0, this.y);
   },
   deactivated() {
-    this.y = window.scrollY
-  }
+    this.y = window.scrollY;
+  },
 };
 </script>
-
-<style scoped>
-.home-leave-to {
-  opacity: 0;
-}
-
-.home-leave-active {
-  transition: opacity .3s linear;
-}
-</style>

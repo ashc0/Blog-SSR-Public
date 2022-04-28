@@ -1,14 +1,11 @@
 <template>
   <div class="server-error">
-    500 Server Error
-    <div class="message">{{$route.query.msg}}</div>
+    {{ $route.query.status }}：{{ $route.query.msg }}
   </div>
 </template>
 
 <script>
-export default {
-
-}
+export default {};
 </script>
 
 <style scoped>
@@ -16,11 +13,10 @@ export default {
   position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%,-50%);
+  transform: translate(-50%, -50%);
   font-size: 30px;
   font-weight: bold;
-}
-.server-error .message {
-  margin: 0 auto;
+  height: 30px;
+  line-height: 30px;
 }
 </style>

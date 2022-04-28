@@ -13,7 +13,7 @@
 </template>
 
 <script>
-import Background from "../components/Background.vue";
+import Background from "../components/common/Background.vue";
 export default {
   components: {
     Background,
