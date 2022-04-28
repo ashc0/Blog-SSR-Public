@@ -18,7 +18,7 @@
           <div class="update">
             <span>
               {{ new Date(parseInt(updatedAt)).getFullYear() }}-{{
-                new Date(parseInt(updatedAt)).getMonth()
+                new Date(parseInt(updatedAt)).getMonth() + 1
               }}-{{ new Date(parseInt(updatedAt)).getDate() }}
             </span>
           </div>

@@ -58,7 +58,7 @@
           <div class="updated">
             <span>
               {{ new Date(parseInt(item.updatedAt)).getFullYear() }}-{{
-                new Date(parseInt(item.updatedAt)).getMonth()
+                new Date(parseInt(item.updatedAt)).getMonth() + 1
               }}-{{ new Date(parseInt(item.updatedAt)).getDate() }}
             </span>
             <span class="author">
@@ -91,8 +91,6 @@ export default {
   },
   data() {
     return {
-      defaultCover:
-        "https://gimg2.baidu.com/image_search/src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F7%2F571f292367444.jpg&refer=http%3A%2F%2Fpic1.win4000.com&app=2002&size=f9999,10000&q=a80&n=0&g=0n&fmt=auto?sec=1653399138&t=083475a95a8a2e253162981c4fc7b130",
       articleList: [],
       offset: 3,
       articleCount: 0,

@@ -4,8 +4,8 @@ import axios from 'axios'
 // const router = createRouter()
 const axiosInstance = axios.create({
   // baseURL: 'https://blog-backend-1688692-1302804299.ap-shanghai.run.tcloudbase.com/api',
-  baseURL: 'https://test-1785248-1302804271.ap-shanghai.run.tcloudbase.com/api',
-  // baseURL: 'http://localhost:3000/api',
+  // baseURL: 'https://test-1785248-1302804271.ap-shanghai.run.tcloudbase.com/api',
+  baseURL: 'http://localhost:3000/api',
   timeout: 3000
 })
 
