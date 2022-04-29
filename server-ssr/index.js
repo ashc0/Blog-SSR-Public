@@ -5,7 +5,7 @@ const serverBundle = path.resolve(process.cwd(), 'server-dist', 'vue-ssr-server-
 const { createBundleRenderer } = require('vue-server-renderer')
 const clientManifestPath = path.resolve(process.cwd(), 'dist', 'vue-ssr-client-manifest.json')
 const clientManifest = JSON.parse(fs.readFileSync(clientManifestPath, 'utf-8'))
-// const compression = require('compression')
+const compression = require('compression')
 // const history = require('connect-history-api-fallback')
 // 创建渲染器
 const template = fs.readFileSync(path.resolve(__dirname, '../ssr-template/index.html'), 'utf8');
@@ -17,7 +17,7 @@ const renderer = createBundleRenderer(serverBundle, {
 })
 
 const app = express()
-// app.use(compression())
+app.use(compression())
 app.use(express.static(path.resolve(process.cwd(), 'dist')));
 
 app.get('*', (req, res) => {

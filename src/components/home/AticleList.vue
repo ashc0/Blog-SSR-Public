@@ -40,7 +40,7 @@
 </template>
 
 <script>
-import GetMoreButton from "./GetMoreButton.vue";
+import GetMoreButton from "../common/GetMoreButton.vue";
 import ArticleListLoading from "./ArticleListLoading.vue"
 export default {
   components: {

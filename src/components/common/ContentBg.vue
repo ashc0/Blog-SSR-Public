@@ -1,12 +1,12 @@
 <template>
-<transition name="home">
+<!-- <transition name="home"> -->
   <div>
     <Background />
     <ContentWrapper>
       <slot />
     </ContentWrapper>
   </div>
-</transition>
+<!-- </transition> -->
 </template>
 
 <script>
@@ -21,11 +21,11 @@ export default {
 </script>
 
 <style scoped>
-.home-leave-to {
+/* .home-leave-to {
   opacity: 0;
 }
 
 .home-leave-active {
   transition: opacity .3s linear;
-}
+} */
 </style>

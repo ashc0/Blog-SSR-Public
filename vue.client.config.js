@@ -14,9 +14,20 @@ module.exports = {
   //     }
   //   },
   // },
+  pluginOptions: {
+    compression: {
+      modes: ['development', 'production'],
+      gzip: {
+        filename: '[file].gz[query]',
+        algorithm: 'gzip',
+        include: /\.(js|css|html|svg|json)(\?.*)?$/i,
+        minRatio: 0.8,
+      }
+    }
+  },
   configureWebpack: () => ({
     entry: './src/client-entry.js',
-    devtool: 'source-map',
+    devtool: 'module-cheap-source-map',
     externals: {
       'vue': 'Vue',
       'vue-router': 'VueRouter',

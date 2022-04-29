@@ -1,4 +1,6 @@
 <template>
+<transition name="post">
+
   <div>
     <PostInfo
       v-if="show"
@@ -10,6 +12,7 @@
     />
     <PostLoading v-if="!show" />
   </div>
+</transition>
 </template>
 
 <script>
@@ -52,6 +55,12 @@ export default {
 </script>
 
 <style>
+.post-enter {
+  opacity: 0;
+}
+.post-enter-active {
+  transition: opacity .3s linear;
+}
 body {
   background-color: rgb(243, 243, 243);
 }
